@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Consulta</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tela de Consulta</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>Bairro</th>
+                    <th>CEP</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each pessoas}}
+                {{#dataValues}}
+                <tr>
+                    <td>{{nome}}</td>
+                    <td>{{endereco}}</td>
+                    <td>{{bairro}}</td>
+                    <td>{{cep}}</td>
+                    <td>{{cidade}}</td>
+                    <td>{{estado}}</td>
+                    <td>
+                        <a href="/editar/{{id}}"><button class="btn btn-primary">Editar</button></a>
+                        <a href="/excluir/{{id}}"> <button class="btn btn-danger">Excluir</button> </a>
+                    </td>
+                </tr>
+                <!-- Adicione mais linhas conforme necessário -->
+                {{/dataValues}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
